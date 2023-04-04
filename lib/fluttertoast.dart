@@ -76,10 +76,6 @@ class Fluttertoast {
       gravityToast = "bottom";
     }
 
-//lines from 78 to 97 have been changed in order to solve issue #328
-    if (backgroundColor == null) {
-      backgroundColor = Colors.black;
-    }
     if (textColor == null) {
       textColor = Colors.white;
     }
@@ -88,8 +84,8 @@ class Fluttertoast {
       'length': toast,
       'time': timeInSecForIosWeb,
       'gravity': gravityToast,
-      'bgcolor': backgroundColor.value,
-      'iosBgcolor': backgroundColor.value,
+      'bgcolor': backgroundColor == null ? null : backgroundColor.value,
+      'iosBgcolor': backgroundColor == null ? null : backgroundColor.value,
       'textcolor': textColor.value,
       'iosTextcolor': textColor.value,
       'fontSize': fontSize,
